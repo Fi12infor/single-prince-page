@@ -1,115 +1,172 @@
 :root {
-    --Cyan: hsl(179, 62%, 43%);
-    --Light-cyan: hsl(179, 61%, 49%);
-    --Bright-Yellow: hsl(71, 73%, 54%);
-    --Light-Gray: hsl(204, 43%, 93%);
-    --Grayish-Blue: hsl(218, 22%, 67%);
-    --blanco: #ffffff;
+  --Cyan: hsl(179, 62%, 43%);
+  --Light-cyan: hsl(179, 61%, 49%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+  --blanco: #ffffff;
+  --gris: #e6e6e6;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 * {
-    margin: 0;
+  margin: 0;
 }
 
 body {
-    font-size: 16px;
-    font-family: "Karla", sans-serif;
-    background-color: var(--Light-Gray);
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  background-color: var(--Light-Gray);
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Estilos Contenido principal */
 .contenido-principal {
-   border-radius: 0.9rem;
-   max-width: 40rem;
-   margin: auto;
-   margin-top: 4rem;
-   overflow: hidden;
+  border-radius: 0.9rem;
+  max-width: 40rem;
+  margin: auto;
+  margin-top: 4rem;
+  overflow: hidden;
 }
 
 /* Estilos Seccion comunidad */
 
 .comunidad {
-    padding: 2rem;
-    background-color: var(--blanco);
+  padding: 2rem;
+  background-color: var(--blanco);
 }
 
 .comunidad h1 {
-    color: var(--Cyan);
-    font-size: 24px;
-    font-weight: 700;
+  color: var(--Cyan);
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .comunidad h2 {
-    color: var(--Bright-Yellow);
-    font-size: 20px;
-    margin-top: 1rem;
-    font-weight: 700;
+  color: var(--Bright-Yellow);
+  font-size: 20px;
+  margin-top: 1rem;
+  font-weight: 700;
 }
 
 .comunidad p {
-    color: var(--Grayish-Blue);
-    margin-top: 1rem;
+  color: var(--Grayish-Blue);
+  margin-top: 1rem;
 }
 
 /* Estilos Seccion susbcripcion */
 
 .subscripcion {
-    background-color: var(--Cyan);
-    padding: 2rem;
+  background-color: var(--Cyan);
+  padding: 2rem;
 }
 
 .subscripcion h2 {
-    color: var(--Light-Gray);
-    font-weight: 400;
+  color: var(--Light-Gray);
+  font-weight: 400;
 }
 
 .subscripcion .price {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: var(--blanco);
-    font-size: 28px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--blanco);
+  font-size: 28px;
 }
 
 .subscripcion .price span {
-    color: var(--Light-cyan);
-    font-weight: 400;
-    font-size: 16px;
+  color: var(--Light-cyan);
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .subscripcion p {
-    color: var(--Light-Gray);
-    margin-bottom: 3rem;
+  color: var(--Light-Gray);
+  margin-bottom: 3rem;
 }
 
 /* Estilos Seccion motivos */
 
 .motivos {
-    background-color: var(--Light-cyan);
+  background-color: var(--Light-cyan);
+  padding: 2rem;
 }
 
 .motivos ul {
-    list-style: none;
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+.motivos ul li {
+  color: var(--gris);
+  font-weight: 400;
+}
+
+.motivos h3 {
+  color: var(--blanco);
 }
 
 /* Estilos botones */
 
 .boton {
-    background-color: var(--Bright-Yellow);
-    color: var(--Light-Gray);
-    text-decoration: none;
-    padding: 1.8rem 6rem;
-    border-radius: .5rem;
-    display: flex;
-    font-weight: 700;
-    justify-content: center;
+  background-color: var(--Bright-Yellow);
+  color: var(--Light-Gray);
+  text-decoration: none;
+  padding: 1.8rem 6rem;
+  border-radius: 0.5rem;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
 }
 
 /* Responsive */
 
-@media screen {
-    
+@media screen and (min-width: 980px) {
+  .contenido-principal {
+    display: grid;
+    grid-template-areas:
+      "comunidad comunidad "
+      "subscripcion motivos";
+    grid-template-columns: 2fr 2fr;
+    grid-auto-rows: auto;
+    max-width: 100rem;
+    margin: auto;
+  }
+
+  .comunidad {
+    grid-area: comunidad;
+    padding: 5rem;
+  }
+  .subscripcion {
+    grid-area: subscripcion;
+    padding: 5rem;
+  }
+  .motivos {
+    grid-area: motivos;
+    padding: 5rem;
+  }
+
+  .comunidad h1 {
+    font-size: 32px;
+  }
+
+  .comunidad h2 {
+    font-size: 28px;
+  }
+
+  .subscripcion .price {
+    font-size: 36px;
+  }
+
+  .boton {
+    padding: 1.8rem 8rem;
+  }
 }
