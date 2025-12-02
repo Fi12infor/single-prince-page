@@ -130,27 +130,27 @@ body {
 
 @media (min-width: 980px) {
   .contenido-principal {
-    display: grid;
-    grid-template-areas:
-      "comunidad comunidad "
-      "subscripcion motivos";
-    grid-template-columns: 2fr 2fr;
-    grid-auto-rows: auto;
+    display: flex;
+    flex-direction: column;
     max-width: 100rem;
     margin: auto;
   }
 
+  .categorias {
+    display: flex;
+    flex-direction: row;
+    width: 100rem;
+  }
   .comunidad {
-    grid-area: comunidad;
     padding: 5rem;
   }
   .subscripcion {
-    grid-area: subscripcion;
     padding: 5rem;
+    width: 50rem;
   }
   .motivos {
-    grid-area: motivos;
     padding: 5rem;
+    width: 50rem;
   }
 
   .comunidad h1 {
@@ -169,3 +169,4 @@ body {
     padding: 1.8rem 8rem;
   }
 }
+
